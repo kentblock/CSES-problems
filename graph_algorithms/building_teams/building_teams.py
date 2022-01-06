@@ -18,7 +18,6 @@ def building_teams(graph):
             cur = q.popleft()
             for u in graph[cur]:
                 if visited[u] and level[u] & 1 != (level[cur] + 1) & 1:
-                    print("IMPOSSIBLE")
                     return False
                 elif not visited[u]:
                     visited[u] = True
@@ -28,6 +27,7 @@ def building_teams(graph):
 
     for i in range(len(graph)):
         if not visited[i] and not bfs(i):
+            print("IMPOSSIBLE")
             return
 
     print(' '.join([str((l & 1) + 1) for l in level]))
