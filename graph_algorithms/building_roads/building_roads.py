@@ -19,6 +19,7 @@ def build_roads(graph):
 def bfs(graph, s, visited):
     q = deque()
     q.append(s)
+    visited[s] = True
     while q:
         cur = q.popleft()
         for u in graph[cur]:

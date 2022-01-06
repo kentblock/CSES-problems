@@ -9,7 +9,7 @@ def message_route(graph, end):
     prev = [-1 for _ in range(len(graph))]
     q = deque()
     q.append(1)
-
+    visited[1] = True
     while q:
         cur = q.popleft()
         if cur == end:
